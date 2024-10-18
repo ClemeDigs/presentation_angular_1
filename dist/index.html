@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Angular 18</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<img src="./img/angular-icon-1.svg" alt="Logo Angular" style="height: 200px;">
+					<h3>Angular 18</h3>
+				</section>
+
+				<section>
+					<section>
+						<h3>Index</h3>
+						<ul>
+							<li><a href="#qu-est-ce-que-angular">Qu'est ce que Angular ?</a></li>
+							<li><a href="#prerequis">Prérequis</a></li>
+							<li><a href="#typescript">TypeScript</a></li>
+							<li><a href="#installation">Installation</a></li>
+							<li><a href="#structure-projet">Structure du projet</a></li>
+							<li><a href="#qu-est-ce-qu-un-composant">Qu'est ce qu'un composant ?</a></li>
+							<li><a href="#structure-composant">Structure d'un composant</a></li>
+							<li><a href="#creer-composant">Créer un composant</a></li>
+							<li><a href="#changer-contenu">Changer le contenu du composant de manière dynamique</a></li>
+							<li><a href="sources">Sources</a></li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section id="qu-est-ce-que-angular">
+						<h3>Qu'est ce que Angular ?</h3>
+						<p class="fragment">La première version d'Angular, AngularJS, a été développé en 2010 par Google.</p>
+						<p class="fragment">Aujourd'hui, AngularJS n'est plus maintenu mais sa réécriture, Angular, est de plus en plus populaire. La dernière version est la version 18.</p>
+						<img src="./img/angular-18.png" alt="image d'un pc avec le logo d'angular 18" style="height: 200px;">
+					</section>
+	
+					<section>
+						<h3>Qu'est ce que Angular ? (suite)</h3>
+						<p class="r-fit-text">Angular est un framework JavaScript front-end qui permet au développeur de travailler plus efficacement et mieux organisé. </p>
+						<p class="r-fit-text fragment">Un framework, c'est comme un cadre de travail: Souvent, on récupère des fonctions qu'on a utilisées dans d'autres projets pour en coder un nouveau: on peut dire que c'est un mini framework personnel.</p>
+						<p class="r-fit-text fragment">Angular, c'est un framework professionnel qui contient tout un tas de fonctions et que tous les utilisateurs peuvent consulter.</p>
+						<img src="./img/angular-devs.png" alt="logo angular avec plusieurs personnes autour" style="height: 200px;">
+					</section>
+	
+					<section>
+						<h3>Qu'est ce que Angular ? (suite)</h3>
+						<p>Angular permet de développer tous types d'applications robustes et efficaces.</p>
+						<p class="fragment">Il est particulièrement efficace pour les applications monopage, qui ne se rechargent pas entièrement à chaque fois et qui sont donc beaucoup plus rapides.</p>
+						<p class="fragment">C'est un framework orienté composants. On code plein de petits composants qui fonctionnent de manière autonome et on les met ensemble.</p>
+					</section>
+				</section>
+
+				<section id="prerequis">
+					<h3>Les prérequis</h3>
+					<img src="./img/angular-scary.webp" alt="GIF du logo angular qui fait peur" style="height: 150px;">
+					<p>On entend souvent que Angular est difficile à apprendre.</p>
+					<p>Pourquoi?</p>
+					<ul>
+						<li>Angular est basé sur le langage TypeScript;</li>
+						<li>Il utilise la dernière version de JavaScript, ES6;</li>
+						<li>Il est construit avec des composants web.</li>
+					</ul>
+				</section>
+
+				<section>
+					<section id="typescript">
+						<h3>TypeScript</h3>
+						<img src="./img/typescript-logo.png" alt="Logo TypeScript" height="200px">
+					</section>
+
+					<section>
+						<h3>Qu'est ce que TypeScript ?</h3>
+						<p>TypeScript a été créé en 2010 par Microsoft, d'abord à l'interne, puis a été présenté officiellement pour tous les développeurs en 2012.</p>
+						<p>TypeScript est un super-set de JavaScript; il contient toutes les fonctionnalités de base mais aussi plein de nouvelles choses.</p>
+						<p>L'avantage de TypeScript est le travail en grosses équipes. Comme le langage doit être typé, on évite beaucoup d'erreurs.</p>
+					</section>
+
+					<section>
+						<h3>Utilisation de TypeScript</h3>
+						<img src="./img/codets.svg" alt="capture d'ecran d'un code TS" style="height: 150px;">
+						<p>En JavaScript, on peut changer les types des variables; pas en TypeScript.</p>
+						<p>On doit ajouter un type à chaque variable. Maintenant, TypeScript enregistre souvent les types sans que le développeur ait besoin de les renseigner.</p>
+					</section>
+				</section>
+				
+				<section>
+					<section id="installation">
+						<h3>Installation d'angular</h3>
+						<p>Pour installer Angular, nous avons besoin de 3 choses: </p>
+							<ul>
+								<li>Node JS, qui gère le code côté serveur;</li>
+								<li>NPM, le gestionnaire de paquets;</li>
+								<li>VS Code.</li>
+							</ul>
+						<p>Ensuite, il suffit d'ouvrir le terminal de commande et de lancer la commande suivante:
+							<pre>npm install -g @angular/cli</pre>
+						</p>
+					</section>
+					<section>
+						<h3>Création du projet</h3>
+						<p>Le terminal de commande peut vous poser quelques questions:
+							<ul>
+								<li>Veux-tu activer l'autocomplétion? OUI</li>
+								<li>Veux tu partager tes informations avec Google? Comme vous voulez!</li>
+							</ul>
+						</p>
+						<p class="r-fit-text">Ensuite, pour créer un nouveau projet, il suffit de lancer la commande suivante:</p>
+						<pre>ng new nom-du-projet --minimal</pre>
+						<p class="r-fit-text">--minimal signifie qu'on créée un projet allégé, sans tous les fichiers de configuration qu'on utilise dans les gros projets.</p>
+					</section>
+					<section>
+						<h3>Extensions</h3>
+						<p>Par défaut, le langage de style du projet sera le CSS mais votre terminal peut vous demander de choisir.</p>
+						<p>Voici quelques extensions utiles à installer sur VS code pour travailler avec Angular et faciliter l'écriture du code:
+							<ul>
+								<li>Angular Langage Service</li>
+								<li>Angular 17 Snippet</li>
+								<li>ESLint</li>
+								<li>Auto Import</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h3>Découvrir le projet</h3>
+						<p>Pour ouvrir le projet dans notre navigateur, il faut ouvrir un nouveau terminal dans VS Code et écrire la commande suivante:
+							<pre>ng serve</pre>
+						</p>
+						<img src="./img/page-accueil.svg" alt="Page d'accueil d'un projet Angular" style="height: 300px;">
+					</section>
+				</section>
+
+				<section>
+					<section id="structure-projet">
+						<h3>Structure d'un projet Angular</h3>
+						<div class="r-hstack">
+							<img src="./img/structure-dossier.svg" alt="Structure d'un dossier Angular" style="height: 400px">
+							<div style="display: flex; flex-direction: column; align-items: flex-start; padding-left: 20px">
+								<p style="font-size: 16px; margin: 4px">.angular: cache des fichiers pendant le build pour l'accelerer</p>
+								<p style="font-size: 16px; margin: 4px">.vscode: dossier où VS Code enregistre les configurations et préférences</p>
+								<p style="font-size: 16px; margin: 4px">node_modules: contient toutes les dépendances nécessaires au projet</p>
+								<p style="font-size: 16px; margin: 4px">public: équivalent du dossier assets</p>
+								<p style="font-size: 16px; margin: 4px">src: le dossier où on travaille le plus.</p>
+								<p style="font-size: 16px; margin: 4px">.editorconfig: configurations minimes. On peut l'ignorer.</p>
+								<p style="font-size: 16px; margin: 4px">.gitignore: permet de ne pas pusher certains fichiers.</p>
+								<p style="font-size: 16px; margin: 4px">package.json: contient toutes les informations sur les dépendances du projet.</p>
+								<p style="font-size: 16px; margin: 4px">package-lock.json: comme le package.json mais plus détaillé.</p>
+								<p style="font-size: 16px; margin: 4px">readme: arrive par défaut. On peut y entre ce qu'on veut.</p>
+								<p style="font-size: 16px; margin: 4px">tsconfig.app.json: contient la configuartion du compilateur TypeScript pour notre projet Angular. </p>
+								<p style="font-size: 16px; margin: 4px">tsconfig.json: configiration principale.</p>
+								<p style="font-size: 16px; margin: 4px">tsconfig.spec.json: contient encore plus d'éléments.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Structure du dossier src</h3>
+						<div class="r-hstack">
+							<img src="./img/structure-src.svg" alt="Structure du dossier src" style="height: 360px">
+							<div style="display: flex; flex-direction: column; align-items: flex-start; padding-left: 20px">
+								<p style="font-size: 16px; margin: 6px">src: le dossier principal où on travaille.</p>
+								<p style="font-size: 16px; margin: 6px">app.component: composant principal de l'application.</p>
+								<p style="font-size: 16px; margin: 6px">app.component.css: styles spécifiques au composant principal.</p>
+								<p style="font-size: 16px; margin: 6px">app.component.html: contient le rendu du composant principal.</p>
+								<p style="font-size: 16px; margin: 6px">app.component.ts: contient le comportement du composant principal.</p>
+								<p style="font-size: 16px; margin: 6px">app.component.spec.ts: contient les tests associés au composant principal.</p>
+								<p style="font-size: 16px; margin: 6px">app.config.ts: module racine; on va y configurer les dépendances externes.</p>
+								<p style="font-size: 16px; margin: 6px">app.root.ts: permet de définir les url mappés sur des composants.</p>
+								<p style="font-size: 16px; margin: 6px">index.html: c'est dans ce fichier que l'application sera affichée.</p>
+								<p style="font-size: 16px; margin: 6px">main.ts: point d'entrée de l'application. Il lance l'affichage du module principal.</p>
+								<p style="font-size: 16px; margin: 6px">styles.css: contient tous les styles globaux.</p>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section id="qu-est-ce-qu-un-composant">
+						<h3>Un composant... C'est quoi ?</h3>
+						<img src="./img/papi-perdu.webp" alt="GIF d'un homme avec un sourire gêné derrière un ordinateur" style="height: 200px;">
+						<p  class="fragment">Un composant, c'est comme une brique de l'application, qui va s'occuper d'un aspect spécifique. </p>
+						<p  class="fragment">Chaque composant contient son contenu, son style et son comportement.</p>
+					</section>
+				</section>
+
+				<section>
+					<section id="structure-composant">
+						<h3>Structure minimale d'un composant</h3>
+						<p style="font-size: 20px">Pour bien comprendre la structure d'un composant, on va faire un peu de ménage: dans le dossier app, supprimez les fichiers suivants:</p>
+							<ul style="font-size: 20px">
+								<li>app.component.css</li>
+								<li>app.component.html</li>
+								<li>app.component.spc.ts</li>
+							</ul>
+						<p style="font-size: 20px">Le fichier app.component.ts contient une erreur car nous avons effacé son fichier html. Mais pas de panique, on va faire du ménage dans ce fichier également:</p>
+						<img src="./img/structure-minimale-composant.svg" alt="Structure minimale d'un composant" height="260px">
+					</section>
+					<section>
+						<h3>Structure minimale d'un composant (suite)</h3>
+						<p style="font-size: 24px">Un composant est une class typeScript à laquelle on ajoute la notation @Component. Elle prend plusieurs paramètres: </p>
+						<div>
+							<img src="./img/structure-minimale-composant3.svg" alt="Structure minimale d'un composant avec html et css" style="height: 240px;">
+							<ul style="font-size: 20px; padding-left: 1rem">
+								<li>Le nom de la balise qu'on pourra utiliser dans le html. Ici, la balise est app-root. En effet, dans notre fichier html, on voit la balise app-root dans le body.</li>
+								<li>standalone: true, ce qui signifie qu'il peut être utilisé sans avoir besoin d'un module. Pour les nouvelles versions d'Angular, c'est le plus souvent le cas.</li>
+								<li>template: il contient le html que nous souhaitons afficher.</li>
+								<li>styles: on peut y définir le style du composant.</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h3>Structure d'un composant</h3>
+						<p style="font-size: 24px">Ça devient difficile à lire si on a le html, le css et le TS dans le même fichier! <br>C'est pour ça qu'au début, on avait 3 fichiers différents:</p>
+						<div style="font-size: 24px" class="r-hstack">
+							<img src="./img/structure-minimale-composant4.svg" alt="Structure du dossier src > app" style="height: 120px; padding-right: 2rem">
+								<ul>
+									<li>app.component.html</li>
+									<li>app.component.css</li>
+									<li>app.component.ts</li>
+								</ul>
+							</p>
+					</div>
+						<p style="font-size: 24px">On va donc les recréer, copier coller notre html et notre css dans les fichiers correspondants et refaire les liens dans le fichier app.component.ts, comme ceci:</p>
+						<img src="./img/structure-minimale-composant2.svg" alt="Structure classique d'un composant angular" style="height: 220px">
+					</section>
+				</section>
+
+				<section>
+					<section id="creer-composant">
+						<h3>Félicitations, votre projet est prêt à accueillir son premier composant!</h3>
+						<img src="./img/cat-code.webp" alt="GIF d'un chat qui code avec la phrase 'dieu merci j'ai pris ce cours de programmation'" style="height: 400px;">
+					</section>
+					<section>
+						<h3>Créer un composant</h3>
+						<div class="r-hstack">
+							<img src="./img/strcutre-app-premier-composant.png" style="height: 500px;" alt="Structure des fichiers lors de la création d'un premier composant">
+							<div style="font-size: 20px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 1rem; width: 50%;">
+								<p>Pour créer un composant, le plus rapide est de le faire via le terminal de VS Code.</p>
+								<pre style="font-size: 20px;">ng generate component nom-du-composant</pre>
+								<p>On va créer un composant dans un dossier components. On peut spécifier directement qu'on ne veut pas le fichier test avec la commande --skip tests. Voici la commande raccourcie:</p>
+								<pre style="font-size: 20px;">ng g c components/nom-du-composant --skip-tests</pre>
+								<p>On utilise g pour generate et c pour component. Le composant généré va donc être stocké dans un nouveau dossier "components" à l'interieur du dossier app.</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Contenu du premier composant</h3>
+						<h4>Préparation</h4>
+						<p>Vous pouvez télécharger mon projet sur GitHub ou bien, si le votre est fonctionnel, continuer avec celui ci.</p>
+						<p>Pour l'exemple, on va faire une fiche produit.</p>
+						<p><a href="https://github.com/ClemeDigs/ex_angular.git">Lien vers le projet de fiche produit</a></p>
+					</section>
+
+					<section>
+						<h3>Contenu du premier composant</h3>
+						<p>Dans le fichier fiche-produit.ts, on voit que le nom de la class est FicheProduitComponent et que les liens sont déjà faits.</p>
+						<p>Si cela ne se fait automatiquement, il suffit de répéter les étapes de création du composant de base: créer deux fichiers : un html et un css, puis refaire les liens.</p>
+						
+					</section>
+					<section>
+						<p style="font-size: 24px;">Ensuite, on va ajouter ce nouveau composant dans le html de app.component.html grace à la balise app-fiche-produit. Il est souligné en rouge car il faut aussi l'importer dans le fichier app.component.ts.</p>
+						<p style="font-size: 24px;">On ajoute le paramètre imports: [FicheProduitComponent], ainsi que l'import en haut de la page.</p>
+						<p style="font-size: 24px;">Le fichier html ne comporte plus d'erreur et si on actualise la page, le texte par defaut apparait: fiche-produit works!</p>
+						<img style="height: 260px;" src="./img/image 27.png" alt="code de app.component.ts">
+						<p style="font-size: 24px;">On peut maintenant ajouter le html et css selon nos besoins.</p>
+					</section>
+				</section>
+
+				<section>
+					<section id="changer-contenu">
+						<h3>Changer le contenu du composant de manière dynamique</h3>
+						<img style="height: 300px;" src="./img/my-brain-tabs.webp" alt="git d'un cerveau qui a trop de tabs ouvertes">
+						<p>Êtes vous prêts ?</p>
+					</section>
+					<section>
+						<p>On va reprendre le composant créé et voir comment en changer le contenu avec le fichier fiche-produit.component.ts.</p>
+						<p>Ne pas oublier que ça roule sur typeScript!</p>
+						<p>Dans la class, on va définir des propriétés:</p>
+						<ul>
+							<li>title: string = 'myPlant';</li>
+							<li>price: string = '$0,99';</li>
+							<li>desc: string = 'This is a plant description, hourra'</li>
+						</ul>
+					</section>
+					<section>
+						<p>Une fois qu'on a défini toutes les propriétés, on peut changer le texte dans le html en insérant le nom de la propriété entre double accolade. 
+						<pre>&#10094;h2 class="title"&#10095;{{title}}&#10094;/h2&#10095;</pre>
+						<pre>&#10094;p class="price"&#10095;{{price}}&#10094;/p&#10095;</pre>
+						<pre>&#10094;p class="desc"&#10095;{{desc}}&#10094;/p&#10095;</pre>
+						<img style="height: 200px;" src="./img/html-fiche-produit-var.png" alt="Code html de la fiche produit avec les variables">
+					</section>
+					<section>
+						<h3>Mais... Ce n'est pas encore dynamique ?</h3>
+						<p class="fragment">Maintenant, on va voir comment pouvoir réutiliser le même composant en changeant les données.</p>
+						<p class="fragment">Angular vient avec une fonctionnalité pour changer les données de manière dynamique:</p>
+						<h3 class="fragment">Les inputs</h3>
+					</section> 
+					<section>
+						<h3>Les inputs</h3>
+						<p>Il existe deux manières de les utiliser:</p>
+						<ul>
+							<li>@input</li>
+							<li>signal-input</li>
+						</ul>
+						<p>Les @input sont bien plus simples à comprendre.</p>
+						<p>Il faut importer les input à la ligne 1, comme suit:</p>
+						<pre>import { Component, Input } from '@angular/core';</pre>
+					</section>
+					<section>
+						<h3>Utilisation des @input dans le fichier ts</h3>
+						<p>Tout ce qu'on doit faire pour transformer nos attributs en Input, c'est d'ajouter @Input() devant le nom de la propriété dans la class FicheProduitComponent dans le fichier.ts.</p>
+						<img style="height: 240px;" src="./img/component-fiche-produit-ts-input.svg" alt="code du fichier fiche-produit.ts avec les input">
+					</section>
+					<section>
+						<h3>Utilisation des @input dans le fichier html</h3>
+						<p style="font-size: 24px;">Maintenant, on peut adapter le contenu de la carte en fonction des input dans le fichier app.component.html, c'est à dire le composant de base.</p>
+						<img src="./img/component-html-input-fiche-produit.svg" alt="Code de app.component.html avec une fiche produit et des input">
+						<p style="font-size: 24px;">Attention! Seuls les strings peuvent être écrits name='string';</p>
+						<p style="font-size: 24px;">Si on veut changer un nombre, le nom de la propriété est un string mais la valeur est un nombre donc TypeScript n'est pas d'accord.</p>
+						<p style="font-size: 24px;">Astuce: on peut simplement regler le problème en mettant le nom de la propriété entre crochets.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>La prochaine fois...</h3>
+						<ul>
+							<li>Rendre nos composant encore plus dynamiques</li>
+							<li>Changer les couleurs et les images</li>
+							<li>Voir quelques fonctionnalités utiles</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Conclusion</h3>
+						<p>Merci de m'avoir écoutée et j'espère que vous ne pensez pas que Angular est...</p>
+						<img class="fragment" src="./img/angular-sheet.webp" alt="Un caca avec le logo Angular"></section>
+				</section>
+				<section id="sources">
+					<h3>Sources et documentation</h3>
+					<p><a href="https://angular.dev/">Site web de Angular avec toute la documentation</a></p>
+					<p><a href="https://angular.dev/tutorials/learn-angular">Tutoriel Angular sur le site officiel</a></p>
+					<p><a href="https://www.youtube.com/watch?v=Lgvt9mN23qM">TypeScript en 5 minutes en français</a></p>
+					<p><a href="https://www.youtube.com/watch?v=U71TQN68QGU">Vidéo tutorielle sur Angular 18 de 4h30 en français</a></p>
+					<p><a href="https://www.youtube.com/watch?v=DTIYVffhJuU">Vidéo tutorielle sur Angular 17 de 9h en français</a></p>
+				</section>
+
+			</div>
+		</div>
+
+
+
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
