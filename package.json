@@ -12,6 +12,9 @@
     "start": "gulp serve",
     "build": "gulp build"
   },
+  "routes": [
+    { "src": "/", "dest": "/index.html" }
+  ]
   "author": {
     "name": "Hakim El Hattab",
     "email": "hakim.elhattab@gmail.com",
