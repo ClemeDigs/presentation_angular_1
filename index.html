@@ -30,12 +30,13 @@
 							<li><a href="#qu-est-ce-que-angular">Qu'est ce que Angular ?</a></li>
 							<li><a href="#prerequis">Prérequis</a></li>
 							<li><a href="#typescript">TypeScript</a></li>
+							<li><a href="#fonctionnalites">Quelques fonctionnalités</a></li>
 							<li><a href="#installation">Installation</a></li>
 							<li><a href="#structure-projet">Structure du projet</a></li>
 							<li><a href="#qu-est-ce-qu-un-composant">Qu'est ce qu'un composant ?</a></li>
 							<li><a href="#structure-composant">Structure d'un composant</a></li>
 							<li><a href="#creer-composant">Créer un composant</a></li>
-							<li><a href="#changer-contenu">Changer le contenu du composant de manière dynamique</a></li>
+							<li><a href="#changer-contenu">Un composant dynamique</a></li>
 							<li><a href="sources">Sources</a></li>
 						</ul>
 					</section>
@@ -45,7 +46,7 @@
 					<section id="qu-est-ce-que-angular">
 						<h3>Qu'est ce que Angular ?</h3>
 						<p class="fragment">La première version d'Angular, AngularJS, a été développé en 2010 par Google.</p>
-						<p class="fragment">Aujourd'hui, AngularJS n'est plus maintenu mais sa réécriture, Angular, est de plus en plus populaire. La dernière version est la version 18.</p>
+						<p class="fragment">Aujourd'hui, AngularJS n'est plus maintenu mais sa réécriture, Angular, est de plus en plus populaire. La dernière version est la version 18, sortie en mai 2024.</p>
 						<img src="./img/angular-18.png" alt="image d'un pc avec le logo d'angular 18" style="height: 200px;">
 					</section>
 	
@@ -95,6 +96,41 @@
 						<img src="./img/codets.svg" alt="capture d'ecran d'un code TS" style="height: 150px;">
 						<p>En JavaScript, on peut changer les types des variables; pas en TypeScript.</p>
 						<p>On doit ajouter un type à chaque variable. Maintenant, TypeScript enregistre souvent les types sans que le développeur ait besoin de les renseigner.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 id="fonctionnalites">Quelques fonctionnalités d'Angular...</h3>
+						<ul style="font-size: 24px;">
+							<li>Two-Way Data Binding: synchronisation des données et de l'interface utilisateur, ce qui facilite la mise à jour rapide.</li>
+							<li>Component-Based Architecture: structure l'application web en composants réutilisables.</li>
+							<li>Router: un peu comme React, gère la navigation entre les pages en optimisant les performances.</li>
+							<li>CLI Angular: c'est un  outil de commande en ligne pour générer et développer des applications Angular.</li>
+							<li>Formulaires et Validation: Angular offre beaucoup de fonctionnalités avancées pour la gestion de formulaires.</li>
+							<li>Angular n'est strictement un framework orienté objet, mais en utilise quand même quelques concepts comme les Class. Il est aussi orienté vers le développement réactif donc finalement, est assez hybride.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Quelques exemples de code propre à Angular...</h3>
+						<ul style="font-size: 24px;">
+							<li>ngIf : affiche ou masque un élément selon une condition.
+								<pre>&lt;div *ngIf=&quot;isLoggedIn&quot;&gt;Bienvenue, utilisateur connecté !&lt;/div&gt;</pre>
+							</li>
+							<li>ngFor : crée une liste d'éléments en itérant sur un tableau.
+								<pre>&lt;ul&gt;
+	&lt;li *ngFor=&quot;let item of items&quot;&gt;{{ item.name }}&lt;/li&gt;
+&lt;/ul&gt;</pre>
+							</li>
+							<li>ngClass : applique dynamiquement des classes CSS en fonction d’une condition.
+								<pre>&lt;div [ngClass]=&quot;{ &#39;active&#39;: isActive, &#39;inactive&#39;: !isActive }&quot;&gt;État de l&#39;utilisateur&lt;/div&gt;
+								</pre>
+							</li>
+							<li>ngModel : effectue la liaison de données bidirectionnelle (utile dans les formulaires).
+								<pre>&lt;input [(ngModel)]=&quot;userName&quot; placeholder=&quot;Entrez votre nom&quot;&gt;
+&lt;p&gt;Nom : {{ userName }}&lt;/p&gt;</pre>
+							</li>
+						</ul>
 					</section>
 				</section>
 				
@@ -316,7 +352,7 @@
 							<li>@input</li>
 							<li>signal-input</li>
 						</ul>
-						<p>Les @input sont bien plus simples à comprendre.</p>
+						<p>Les signal input sont plus récents donc moins utilisés, bien que plus pratiques. On va utiliser les @input classiques.</p>
 						<p>Il faut importer les input à la ligne 1, comme suit:</p>
 						<pre>import { Component, Input } from '@angular/core';</pre>
 					</section>
